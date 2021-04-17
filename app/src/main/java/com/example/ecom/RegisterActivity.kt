@@ -1,5 +1,6 @@
 package com.example.ecom
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -7,7 +8,6 @@ import android.widget.EditText
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
-import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 
@@ -34,9 +34,12 @@ class RegisterActivity : AppCompatActivity() {
                             "name=$name&address=$add"
                 val rq:RequestQueue = Volley.newRequestQueue(this)
                 val stringRequest = StringRequest(Request.Method.GET,baseUrl, { response ->
-                if (response.equals("1"))
-                    Toast.makeText(this,"User Created",Toast.LENGTH_LONG).show()
-                else
+                    if (response.equals("1")){
+                        UsersInfo.mobile = mobile
+                    val i = Intent(this, HomeActivity::class.java)
+                    startActivity(i)
+
+                }else
                     Toast.makeText(this,"mobile already used",Toast.LENGTH_LONG).show()
 
 
