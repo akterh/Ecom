@@ -34,16 +34,16 @@ class LoginActivity : AppCompatActivity() {
             val logPass = password.text.toString()
 
             val baseUrl =
-                "http://192.168.0.101/salesWeb/login.php?mobile=$logMobile&password=$logPass&"
+                "http://192.168.0.103/salesweb/login.php?mobile=$logMobile&password=$logPass"
             val rq: RequestQueue = Volley.newRequestQueue(this)
             val stringRequest = StringRequest(Request.Method.GET,baseUrl, { response ->
-                if (response.equals("1")) {
+                if (response.equals("available")) {
                     UsersInfo.mobile = logMobile
                     val i = Intent(this, HomeActivity::class.java)
                     startActivity(i)
 
                 }else
-                    Toast.makeText(this,"mobile already used", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"UserName or password error", Toast.LENGTH_LONG).show()
 
 
             }, { error->

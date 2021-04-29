@@ -1,0 +1,12 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_text"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:text="TextView"
+    android:textSize="20sp"
+    android:padding="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:textColor="@color/black" />
