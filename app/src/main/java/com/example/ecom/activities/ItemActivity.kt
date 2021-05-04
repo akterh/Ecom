@@ -1,4 +1,4 @@
-package com.example.ecom
+package com.example.ecom.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
+import com.example.ecom.R
+import com.example.ecom.Utils.Constants
+import com.example.ecom.adapter.ItemAdapter
+import com.example.ecom.model.Items
 
 class ItemActivity : AppCompatActivity() {
 

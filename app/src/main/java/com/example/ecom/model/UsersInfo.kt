@@ -1,4 +1,4 @@
-package com.example.ecom
+package com.example.ecom.model
 
 class UsersInfo {
     companion object{

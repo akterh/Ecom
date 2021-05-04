@@ -1,4 +1,4 @@
-package com.example.ecom
+package com.example.ecom.adapter
 
 import android.content.Context
 import android.util.Log
@@ -9,6 +9,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ecom.Utils.Constants
+import com.example.ecom.model.Items
+import com.example.ecom.R
 import com.squareup.picasso.Picasso
 
 //class ItemAdapter(var list: ArrayList<Items>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -18,9 +21,7 @@ import com.squareup.picasso.Picasso
 //
 //    }
 
-class ItemAdapter( var context:Context,var list: ArrayList<Items> ):
-
-        RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ItemAdapter( var context:Context,var list: ArrayList<Items> ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         var myView = LayoutInflater.from(context).inflate(R.layout.itemview,parent,false)

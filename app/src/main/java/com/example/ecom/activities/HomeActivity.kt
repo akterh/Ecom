@@ -1,4 +1,4 @@
-package com.example.ecom
+package com.example.ecom.activities
 
 import android.content.Intent
 
@@ -12,6 +12,8 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
+import com.example.ecom.R
+import com.example.ecom.Utils.Constants
 
 
 class HomeActivity : AppCompatActivity() {
@@ -34,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
 
                 list.add(response.getJSONObject(x).getString("item_category_id"))
 
-                val adp = ArrayAdapter(this,R.layout.mytextview,list)
+                val adp = ArrayAdapter(this, R.layout.mytextview,list)
                 listView.adapter = adp
                 Log.d("adapter","${listView.adapter}")
 
@@ -49,7 +51,7 @@ class HomeActivity : AppCompatActivity() {
         listView.setOnItemClickListener { parent, view, position, id ->
 
             val cat:String = list[position]
-            val intent = Intent(this,ItemActivity::class.java)
+            val intent = Intent(this, ItemActivity::class.java)
             intent.putExtra("cat",cat)
             startActivity(intent)
 

@@ -7,12 +7,12 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "26.0.3"
 
     defaultConfig {
         applicationId "com.example.ecom"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 

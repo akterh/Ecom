@@ -1,4 +1,4 @@
-package com.example.ecom
+package com.example.ecom.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +11,9 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.ecom.R
+import com.example.ecom.Utils.Constants
+import com.example.ecom.model.UsersInfo
 
 class LoginActivity : AppCompatActivity() {
 
@@ -27,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         mobile = findViewById(R.id.edt_mob)
         password = findViewById(R.id.edt_pass)
         register.setOnClickListener {
-            var i = Intent(this,RegisterActivity::class.java)
+            var i = Intent(this, RegisterActivity::class.java)
             startActivity(i)
         }
         login.setOnClickListener {
