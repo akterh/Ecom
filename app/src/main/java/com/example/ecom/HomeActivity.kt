@@ -1,7 +1,7 @@
 package com.example.ecom
 
 import android.content.Intent
-import android.icu.number.NumberFormatter.with
+
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -12,7 +12,7 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
-import com.squareup.picasso.Picasso
+
 
 class HomeActivity : AppCompatActivity() {
     lateinit var listView:ListView
@@ -21,7 +21,11 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         listView = findViewById(R.id.home_cat)
 
-        val baseUrl = "http://192.168.0.103/salesweb/get_cat.php"
+        val url = Constants()
+        val webUrl = url.IP
+
+        val baseUrl = "$webUrl/get_cat.php"
+
 
         val list = ArrayList<String>()
         val rq: RequestQueue = Volley.newRequestQueue(this)

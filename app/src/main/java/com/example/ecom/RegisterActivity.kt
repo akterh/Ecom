@@ -29,8 +29,11 @@ class RegisterActivity : AppCompatActivity() {
             val name = regName.text.toString()
             val add = regAdd.text.toString()
             if (pass == passCon) {
+
+                val url = Constants()
+                val webUrl = url.IP
                 val baseUrl =
-                    "http://192.168.0.103/salesweb/add_user.php?mobile=$mobile&pass=$pass&" +
+                    "$webUrl/add_user.php?mobile=$mobile&pass=$pass&" +
                             "name=$name&add=$add"
                 val rq:RequestQueue = Volley.newRequestQueue(this)
                 val stringRequest = StringRequest(Request.Method.GET,baseUrl, { response ->

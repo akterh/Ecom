@@ -3,6 +3,7 @@ package com.example.ecom
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -33,8 +34,12 @@ class LoginActivity : AppCompatActivity() {
             val logMobile =mobile.text.toString()
             val logPass = password.text.toString()
 
+            val url = Constants()
+            val webUrl = url.IP
+            Log.d("url", webUrl)
+
             val baseUrl =
-                "http://192.168.0.103/salesweb/login.php?mobile=$logMobile&password=$logPass"
+                "$webUrl/login.php?mobile=$logMobile&password=$logPass"
             val rq: RequestQueue = Volley.newRequestQueue(this)
             val stringRequest = StringRequest(Request.Method.GET,baseUrl, { response ->
                 if (response.equals("available")) {
